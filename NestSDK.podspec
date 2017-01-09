@@ -19,7 +19,7 @@ Pod::Spec.new do |s|
   s.platform     = :ios, '9.0'
   s.ios.deployment_target = '8.0'
 
-  s.source           = { :git => 'https://github.com/petroakzhygitov/NestSDK.git', :tag => s.version.to_s }
+  s.source           = { :git => 'https://github.com/exaud/nest-ios-sdk.git', :branch => 'HVACModeEco' }
 
   s.requires_arc = true
 
