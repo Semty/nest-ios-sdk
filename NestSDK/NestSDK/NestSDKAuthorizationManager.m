@@ -146,10 +146,10 @@ static const NSTimeInterval kDefaultTimeoutInterval = 8.0;
 }
 
 - (void)_finishAuthorizationWithAuthorizationResult:(NestSDKAuthorizationManagerAuthorizationResult *)authorizationResult error:(NSError *)error {
-    self.handler(authorizationResult, error);
-    self.handler = nil;
-
-    [self.authorizationViewController dismissViewControllerAnimated:YES completion:nil];
+    [self.authorizationViewController dismissViewControllerAnimated:YES completion:^() {
+        self.handler(authorizationResult, error);
+        self.handler = nil;
+    }];
     self.authorizationViewController = nil;
 }
 
