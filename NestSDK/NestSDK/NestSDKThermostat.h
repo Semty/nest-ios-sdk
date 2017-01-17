@@ -140,6 +140,26 @@ typedef NS_ENUM(NSUInteger, NestSDKThermostatHVACState) {
 @property(nonatomic) CGFloat targetTemperatureLowC;
 
 /**
+ * Maximum eco temperature, displayed in whole degrees Fahrenheit (1°F). Used with hvac_mode = "eco".
+ */
+@property(nonatomic) NSUInteger ecoTemperatureHighF;
+
+/**
+ * Maximum eco temperature, displayed in half degrees Celsius (0.5°C). Used with hvac_mode = "eco".
+ */
+@property(nonatomic) CGFloat ecoTemperatureHighC;
+
+/**
+ * Minimum eco temperature, displayed in whole degrees Fahrenheit (1°F). Used with hvac_mode = "eco".
+ */
+@property(nonatomic) NSUInteger ecoTemperatureLowF;
+
+/**
+ * Minimum eco temperature, displayed in half degrees Celsius (0.5°C). Used with hvac_mode = "eco".
+ */
+@property(nonatomic) CGFloat ecoTemperatureLowC;
+
+/**
  * Maximum away temperature, displayed in whole degrees Fahrenheit (1°F).
  */
 @property(nonatomic, readonly) NSUInteger awayTemperatureHighF;

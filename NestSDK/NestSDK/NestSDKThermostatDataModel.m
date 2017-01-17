@@ -269,6 +269,11 @@ const NSUInteger NestSDKThermostatTemperatureFAllowableMax = 90;
     if (!_hasFan) {
         [array removeObject:@"fanTimerActive"];
     }
+
+    [array removeObject:@"ecoTemperatureLowF"];
+    [array removeObject:@"ecoTemperatureLowC"];
+    [array removeObject:@"ecoTemperatureHighF"];
+    [array removeObject:@"ecoTemperatureHighC"];
     
     if (self.currentHVACMode == NestSDKThermostatHVACModeEco) {
         for (NSUInteger i = 0; i < array.count; i++) {
@@ -303,6 +308,10 @@ const NSUInteger NestSDKThermostatTemperatureFAllowableMax = 90;
     thermostatDataModelCopy.targetTemperatureHighC = self.targetTemperatureHighC;
     thermostatDataModelCopy.targetTemperatureLowF = self.targetTemperatureLowF;
     thermostatDataModelCopy.targetTemperatureLowC = self.targetTemperatureLowC;
+    thermostatDataModelCopy.ecoTemperatureHighF = self.ecoTemperatureHighF;
+    thermostatDataModelCopy.ecoTemperatureHighC = self.ecoTemperatureHighC;
+    thermostatDataModelCopy.ecoTemperatureLowF = self.ecoTemperatureLowF;
+    thermostatDataModelCopy.ecoTemperatureLowC = self.ecoTemperatureLowC;
     thermostatDataModelCopy.awayTemperatureHighF = self.awayTemperatureHighF;
     thermostatDataModelCopy.awayTemperatureHighC = self.awayTemperatureHighC;
     thermostatDataModelCopy.awayTemperatureLowF = self.awayTemperatureLowF;
@@ -337,6 +346,10 @@ const NSUInteger NestSDKThermostatTemperatureFAllowableMax = 90;
     result = (NSUInteger) (prime * result + self.targetTemperatureHighC);
     result = prime * result + self.targetTemperatureLowF;
     result = (NSUInteger) (prime * result + self.targetTemperatureLowC);
+    result = prime * result + self.ecoTemperatureHighF;
+    result = (NSUInteger) (prime * result + self.ecoTemperatureHighC);
+    result = prime * result + self.ecoTemperatureLowF;
+    result = (NSUInteger) (prime * result + self.ecoTemperatureLowC);
     result = prime * result + self.awayTemperatureHighF;
     result = (NSUInteger) (prime * result + self.awayTemperatureHighC);
     result = prime * result + self.awayTemperatureLowF;
@@ -377,6 +390,10 @@ const NSUInteger NestSDKThermostatTemperatureFAllowableMax = 90;
             (self.targetTemperatureHighC == otherThermostat.targetTemperatureHighC) &&
             (self.targetTemperatureLowF == otherThermostat.targetTemperatureLowF) &&
             (self.targetTemperatureLowC == otherThermostat.targetTemperatureLowC) &&
+            (self.ecoTemperatureHighF == otherThermostat.ecoTemperatureHighF) &&
+            (self.ecoTemperatureHighC == otherThermostat.ecoTemperatureHighC) &&
+            (self.ecoTemperatureLowF == otherThermostat.ecoTemperatureLowF) &&
+            (self.ecoTemperatureLowC == otherThermostat.ecoTemperatureLowC) &&
             (self.awayTemperatureHighF == otherThermostat.awayTemperatureHighF) &&
             (self.awayTemperatureHighC == otherThermostat.awayTemperatureHighC) &&
             (self.awayTemperatureLowF == otherThermostat.awayTemperatureLowF) &&
