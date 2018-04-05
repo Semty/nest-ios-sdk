@@ -28,12 +28,8 @@ Pod::Spec.new do |s|
   
   s.dependency 'JSONModel', '1.2.0'
   s.dependency 'SSKeychain', '1.3.1'
-  
-  s.weak_framework = 'Firebase'
 
   s.frameworks = 'Security', 'CFNetwork', 'SystemConfiguration'
   s.libraries = 'c++', 'icucore'
-
-  s.pod_target_xcconfig = { 'FRAMEWORK_SEARCH_PATHS' => '${PODS_ROOT}/Firebase', 'ENABLE_BITCODE' => 'NO', 'OTHER_LDFLAGS' => '-ObjC' }
 
 end
