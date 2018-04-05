@@ -24,7 +24,6 @@
 #import "NestSDKAccessTokenCache.h"
 #import "NestSDKService.h"
 #import "NestSDKRESTService.h"
-#import "NestSDKFirebaseService.h"
 #import "NestSDKLogger.h"
 
 static NSString *const kNestAPIEndpointURLString = @"https://developer-api.nest.com/";
@@ -85,9 +84,6 @@ static id <NestSDKService> g_service;
     if (self.useRESTService) {
         service = [[NestSDKRESTService alloc] init];
 
-    } else {
-        Firebase *firebase = [[Firebase alloc] initWithUrl:kNestAPIEndpointURLString];
-        service = [[NestSDKFirebaseService alloc] initWithFirebase:firebase];
     }
 
     [self _setService:service];

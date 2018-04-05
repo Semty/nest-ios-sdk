@@ -26,7 +26,6 @@ Pod::Spec.new do |s|
   s.source_files = 'NestSDK/NestSDK/**/*.{h,m}'
   s.public_header_files = 'NestSDK/NestSDK/*.{h}'
   
-  s.dependency 'Firebase', '1.2.3'
   s.dependency 'JSONModel', '1.2.0'
   s.dependency 'SSKeychain', '1.3.1'
   
